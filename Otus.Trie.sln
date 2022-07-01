@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Otus.Trie", "Otus.Trie\Otus.Trie.csproj", "{5C82CF51-CE80-4F14-BC04-F31A530AF8A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{88B15B62-60A0-4EEA-BFBC-4CF6B9EEF94E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5C82CF51-CE80-4F14-BC04-F31A530AF8A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C82CF51-CE80-4F14-BC04-F31A530AF8A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C82CF51-CE80-4F14-BC04-F31A530AF8A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C82CF51-CE80-4F14-BC04-F31A530AF8A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88B15B62-60A0-4EEA-BFBC-4CF6B9EEF94E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88B15B62-60A0-4EEA-BFBC-4CF6B9EEF94E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88B15B62-60A0-4EEA-BFBC-4CF6B9EEF94E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88B15B62-60A0-4EEA-BFBC-4CF6B9EEF94E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0E911D88-C8A9-4511-87F8-92E3DC8F4871}
+	EndGlobalSection
+EndGlobal

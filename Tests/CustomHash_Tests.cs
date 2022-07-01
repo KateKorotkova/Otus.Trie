@@ -8,7 +8,7 @@ namespace Tests
         [Test]
         public void Can_Insert_To_CustomHash()
         {
-            var customHash = new CustomHash();
+            var customHash = new CustomHash<string>();
 
             customHash.Insert("ab", "test");
             customHash.Insert("abc", "test");
@@ -23,7 +23,7 @@ namespace Tests
         [Test]
         public void Can_Search_In_CustomHash_Small_Word()
         {
-            var customHash = new CustomHash();
+            var customHash = new CustomHash<string>();
             customHash.Insert("ab", "test");
             customHash.Insert("abc", "test");
 
@@ -35,7 +35,7 @@ namespace Tests
         [Test]
         public void Can_Search_In_CustomHash_Big_Word()
         {
-            var customHash = new CustomHash();
+            var customHash = new CustomHash<string>();
             customHash.Insert("ab", "test");
             customHash.Insert("abc", "test");
 
@@ -47,7 +47,7 @@ namespace Tests
         [Test]
         public void Can_Search_If_Word_DoesNot_Exists_At_All()
         {
-            var customHash = new CustomHash();
+            var customHash = new CustomHash<string>();
             customHash.Insert("ab", "test");
             customHash.Insert("abc", "test");
 
@@ -59,7 +59,7 @@ namespace Tests
         [Test]
         public void Can_Search_If_Part_Of_Word_Exists()
         {
-            var customHash = new CustomHash();
+            var customHash = new CustomHash<string>();
             customHash.Insert("ab", "test");
             customHash.Insert("abc", "test");
 
@@ -71,7 +71,7 @@ namespace Tests
         [Test]
         public void Can_StartWith_If_Part_Of_Word_Exists()
         {
-            var customHash = new CustomHash();
+            var customHash = new CustomHash<string>();
             customHash.Insert("abc", "test");
             customHash.Insert("abcd", "test");
 
@@ -83,7 +83,7 @@ namespace Tests
         [Test]
         public void Can_StartWith_If_Word_Exists_In_Full()
         {
-            var customHash = new CustomHash();
+            var customHash = new CustomHash<string>();
             customHash.Insert("ab", "test");
             customHash.Insert("abc", "test");
 
@@ -95,7 +95,7 @@ namespace Tests
         [Test]
         public void Can_StartWith_If_Part_Of_Word_DoesNot_Exists()
         {
-            var customHash = new CustomHash();
+            var customHash = new CustomHash<string>();
             customHash.Insert("ab", "test");
             customHash.Insert("abc", "test");
 
@@ -107,7 +107,7 @@ namespace Tests
         [Test]
         public void Can_StartWith_If_Word_DoesNot_Exists_At_All()
         {
-            var customHash = new CustomHash();
+            var customHash = new CustomHash<string>();
             customHash.Insert("ab", "test");
             customHash.Insert("abc", "test");
 
@@ -122,7 +122,7 @@ namespace Tests
             var keyToSearch = "abc";
             var valueToSearch = "test_2";
 
-            var customHash = new CustomHash();
+            var customHash = new CustomHash<string>();
             customHash.Insert("ab", "test_1");
             customHash.Insert(keyToSearch, valueToSearch);
 
@@ -136,7 +136,7 @@ namespace Tests
         [Test]
         public void CanNot_Get_Value_By_A_Part_Of_Key_If_Value_On_It_DoesNot_Exits()
         {
-            var customHash = new CustomHash();
+            var customHash = new CustomHash<string>();
             customHash.Insert("abc", "test_1");
             customHash.Insert("abcd", "test_2");
 
@@ -148,7 +148,7 @@ namespace Tests
         [Test]
         public void CanNot_Get_Value_By_A_Part_Of_Key_If_Value_On_It_Exits()
         {
-            var customHash = new CustomHash();
+            var customHash = new CustomHash<string>();
             customHash.Insert("abc", "test_1");
 
             var value = customHash.Get("abcd");
@@ -159,7 +159,7 @@ namespace Tests
         [Test]
         public void CanNot_Get_Value_By_UnExisting_Key()
         {
-            var customHash = new CustomHash();
+            var customHash = new CustomHash<string>();
             customHash.Insert("abc", "test_1");
             customHash.Insert("abcd", "test_2");
 

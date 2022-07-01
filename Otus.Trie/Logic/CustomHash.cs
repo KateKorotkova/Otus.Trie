@@ -1,17 +1,17 @@
 ﻿namespace Otus.Trie.Logic
 {
-    public class CustomHash
+    public class CustomHash<TValue>
     {
-        public readonly NodeForCustomHash Root;
+        public readonly NodeForCustomHash<TValue> Root;
 
 
         public CustomHash()
         {
-            Root = new NodeForCustomHash();
+            Root = new NodeForCustomHash<TValue>();
         }
 
 
-        public void Insert(string word, string value)
+        public void Insert(string word, TValue value)
         {
             var currentNode = Root;
 
@@ -25,11 +25,11 @@
             currentNode.Value = value;
         }
 
-        public string Get(string word)
+        public TValue Get(string word)
         {
             var nodeWithWord = GetNode(word);
             if (nodeWithWord == null || !nodeWithWord.IsFullWord)
-                return null;
+                return default;
 
             return nodeWithWord.Value;
         }
@@ -51,7 +51,7 @@
 
         #region Support Methods
 
-        private NodeForCustomHash GetNode(string word)
+        private NodeForCustomHash<TValue> GetNode(string word)
         {
             var currentNode = Root;
 
@@ -70,16 +70,16 @@
     }
 
 
-    public class NodeForCustomHash
+    public class NodeForCustomHash<TValue>
     {
-        public readonly NodeForCustomHash[] Nodes;
+        public readonly NodeForCustomHash<TValue>[] Nodes;
         public bool IsFullWord => Value != null;
-        public string Value { get; set; }
+        public TValue Value { get; set; }
 
 
         public NodeForCustomHash()
         {
-            Nodes = new NodeForCustomHash[256];
+            Nodes = new NodeForCustomHash<TValue>[256];
         }
 
 
@@ -88,7 +88,7 @@
             return Nodes[character] != null;
         }
 
-        public NodeForCustomHash Get(char character)
+        public NodeForCustomHash<TValue> Get(char character)
         {
             return Nodes[character];
         }
@@ -97,7 +97,7 @@
         public void Add(char character)
         {
             if (!IsExists(character))
-                Nodes[character] = new NodeForCustomHash();
+                Nodes[character] = new NodeForCustomHash<TValue>();
         }
     }
 }

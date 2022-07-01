@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using Otus.Trie.Logic;
+using Otus.Trie.Logic.Trie;
 
 namespace Tests
 {

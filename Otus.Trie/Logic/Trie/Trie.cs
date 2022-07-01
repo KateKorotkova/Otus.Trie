@@ -1,8 +1,10 @@
-﻿namespace Otus.Trie.Logic
+﻿namespace Otus.Trie.Logic.Trie
 {
     public class Trie
     {
+        //public only for test purpose
         public readonly Node Root;
+
 
         public Trie()
         {
@@ -18,7 +20,7 @@
             {
                 currentNode.Add(character);
 
-                currentNode = currentNode.Get(character);
+                currentNode = currentNode[character];
             }
 
             currentNode.IsFullWord = true;
@@ -33,7 +35,7 @@
                 if (!currentNode.IsExists(character))
                     return false;
 
-                currentNode = currentNode.Get(character);
+                currentNode = currentNode[character];
             }
 
             return currentNode.IsFullWord;
@@ -48,40 +50,10 @@
                 if (!currentNode.IsExists(character))
                     return false;
 
-                currentNode = currentNode.Get(character);
+                currentNode = currentNode[character];
             }
 
             return true;
-        }
-    }
-
-
-    public class Node
-    {
-        public readonly Node[] Nodes;
-        public bool IsFullWord;
-
-        
-        public Node()
-        {
-            Nodes = new Node[256];
-        }
-
-
-        public bool IsExists(char character)
-        {
-            return Nodes[character] != null;
-        }
-
-        public Node Get(char character)
-        {
-            return Nodes[character];
-        }
-
-        public void Add(char character)
-        {
-            if (!IsExists(character))
-                Nodes[character] = new Node();
         }
     }
 }

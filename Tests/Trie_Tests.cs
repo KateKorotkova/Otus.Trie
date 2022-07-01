@@ -3,7 +3,7 @@ using Otus.Trie.Logic;
 
 namespace Tests
 {
-    public class Tests
+    public class Trie_Tests
     {
         [Test]
         public void Can_Insert_To_Trie()
